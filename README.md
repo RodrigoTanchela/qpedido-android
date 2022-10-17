@@ -1,1 +1,0 @@
-# qpedido-android
