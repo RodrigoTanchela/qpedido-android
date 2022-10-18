@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Qpedido - Faça seu pedido digitalmente</string>
+    <string name="app_name">Qpedido</string>
     <string name="app_main_title">SEJA BEM VINDO</string>
     <string name="app_main_description">Faça seu pedido aqui!</string>
     <string name="app_bottom_click">Pressione na tela para começar</string>
