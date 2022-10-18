@@ -16,7 +16,7 @@
     <TextView
             android:text="@string/app_main_title"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView"
+            android:layout_height="wrap_content" android:id="@+id/textTitle"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="parent" android:textAlignment="center"
@@ -25,15 +25,15 @@
     <TextView
             android:text="@string/app_main_description"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            android:layout_marginTop="8dp" android:textAlignment="center"
+            android:layout_height="wrap_content" android:id="@+id/textDescription"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle"
+            android:layout_marginTop="4dp" android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:textColor="@color/white" android:textSize="20sp" android:fontFamily="@font/roboto_bold"/>
     <TextView
             android:text="@string/app_bottom_click"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView4"
+            android:layout_height="wrap_content" android:id="@+id/textPress"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:textColor="@color/white" android:textSize="20sp" android:fontFamily="@font/roboto_bold"
