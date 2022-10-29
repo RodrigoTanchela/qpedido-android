@@ -3,4 +3,29 @@
     <string name="app_main_title">SEJA BEM VINDO</string>
     <string name="app_main_description">Faça seu pedido aqui!</string>
     <string name="app_bottom_click">Pressione na tela para começar</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_text"/>
+    <string name="email_label">Email</string>
+    <string name="email_hint">seu@email.com</string>
+    <string name="password_label">Senha</string>
+    <string name="password_hint">senha</string>
+    <string name="fullname_label">Nome completo</string>
+    <string name="fullname_hint">Seu Nome</string>
+    <string name="ddd_label">DDD</string>
+    <string name="ddd_hint">48</string>
+    <string name="phone_label">Celular</string>
+    <string name="phone_hint">9999–9999</string>
+    <string name="password_repeat_label">Repetir senha</string>
+    <string name="password_repeat_hint">repetir senha</string>
+    <string name="birth_label">Data de nascimento</string>
+    <string name="birth_hint">DD/MM/AAAA</string>
+    <string name="login">Entrar</string>
+    <string name="register">Registrar</string>
+    <string name="user_registration">Cadastro de Usuário</string>
+    <string name="user_login">Login</string>
+
+
+
+    <string name="login_fragment_title">Informações de acesso</string>
+    <string name="register_fragment_title">Informações pessoais</string>
 </resources>
