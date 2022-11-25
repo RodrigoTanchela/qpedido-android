@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content" android:id="@+id/buttonLogin"
                     android:layout_marginTop="20dp"
                     android:backgroundTint="@color/blue_1" android:fontFamily="@font/roboto_bold"
-                    android:minWidth="328dp" android:maxWidth="400dp"/>
+                    android:minWidth="328dp" android:maxWidth="400dp" android:onClick="onClickLogin"/>
             <ImageView
                     android:src="@drawable/has_account"
                     android:layout_width="match_parent"

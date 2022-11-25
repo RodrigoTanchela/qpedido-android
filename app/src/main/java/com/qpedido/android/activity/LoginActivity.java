@@ -1,5 +1,6 @@
 package com.qpedido.android.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onClickReturn(View view) {
-        finish();
+//        finish();
     }
 
     public void onClickSwitchRegister(View view) {
@@ -51,5 +52,19 @@ public class LoginActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragmentLogin, new LoginFragment());
         fragmentTransaction.commit();
         title.setText(R.string.user_login);
+    }
+
+    public void onClickLogin(View view) {
+        //TODO Adicionar fluxo de verificação de credencias.
+        Intent intent = new Intent(this, QRCodeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    public void onClickRegister(View view) {
+        //TODO Adicionar fluxo de criação de usuário.
+        Intent intent = new Intent(this, QRCodeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }

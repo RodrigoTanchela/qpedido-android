@@ -6,8 +6,9 @@
         <entry key="..\:/DEV/Git/qpedido-android/app/src/main/res/drawable-anydpi/backbround-table.xml" value="0.1" />
         <entry key="..\:/DEV/Git/qpedido-android/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/DEV/Git/qpedido-android/app/src/main/res/layout/activity_main.xml" value="0.4033041788143829" />
+        <entry key="..\:/DEV/Git/qpedido-android/app/src/main/res/layout/activity_qrcode.xml" value="0.151268115942029" />
         <entry key="..\:/DEV/Git/qpedido-android/app/src/main/res/layout/fragment_login.xml" value="0.264" />
-        <entry key="..\:/DEV/Git/qpedido-android/app/src/main/res/layout/fragment_register.xml" value="0.176" />
+        <entry key="..\:/DEV/Git/qpedido-android/app/src/main/res/layout/fragment_register.xml" value="0.264" />
       </map>
     </option>
   </component>
