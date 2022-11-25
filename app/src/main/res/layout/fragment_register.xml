@@ -60,7 +60,7 @@
                     <LinearLayout
                             android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" android:layout_weight="8">
+                            android:layout_height="match_parent" android:layout_weight="6">
                         <TextView
                                 android:text="@string/ddd_label"
                                 android:layout_width="match_parent"
@@ -71,7 +71,8 @@
                                 android:layout_height="wrap_content"
                                 android:inputType="textPersonName"
                                 android:ems="10"
-                                android:id="@+id/editTextDDD" android:hint="@string/ddd_hint" android:minHeight="48dp"/>
+                                android:id="@+id/editTextDDD" android:hint="@string/ddd_hint" android:minHeight="48dp"
+                                android:maxLength="2"/>
                     </LinearLayout>
                     <LinearLayout
                             android:orientation="vertical"
@@ -131,7 +132,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/buttonRegister"
                         android:backgroundTint="@color/green_1" android:fontFamily="@font/roboto_bold"
-                        android:includeFontPadding="false"/>
+                        android:includeFontPadding="false" android:onClick="onClickRegister"/>
                 <ImageView
                         android:src="@drawable/has_account"
                         android:layout_width="match_parent"

@@ -16,6 +16,7 @@ import com.qpedido.android.R;
 public class RegisterFragment extends Fragment {
 
     EditText birthField;
+    EditText phoneField;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,41 @@ public class RegisterFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_register, container, false);
         birthField = view.findViewById(R.id.editTextBirth);
         birthListener(view);
+        phoneField = view.findViewById(R.id.editTextPhone);
+        phoneListener(view);
         return view;
+    }
+
+    public void phoneListener(View view) {
+        phoneField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                editable.setFilters(new InputFilter[]{
+                        new InputFilter() {
+                            @Override
+                            public CharSequence filter(CharSequence charSequence, int i, int i1, Spanned spanned, int i2, int i3) {
+                                if (!charSequence.toString().isEmpty() && editable.length() == 3){ {
+                                    return charSequence+"-";
+                                }}
+                                if (editable.length() > 8) {
+                                    return "";
+                                }
+                                return null;
+                            }
+                        }
+                });
+            }
+        });
     }
 
     @SuppressLint("SetTextI18n")
@@ -48,22 +83,20 @@ public class RegisterFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                System.out.println();
                 editable.setFilters(new InputFilter[]{
                         new InputFilter() {
                             @Override
                             public CharSequence filter(CharSequence charSequence, int i, int i1, Spanned spanned, int i2, int i3) {
-                                System.out.println(i);
-                                System.out.println(i1);
+                                if (!charSequence.toString().isEmpty() && (editable.length() == 1 || editable.length() == 4)){
+                                    return charSequence+"/";
+                                }
+                                if (editable.length() > 9) {
+                                    return "";
+                                }
                                 return null;
                             }
                         }
                 });
-                if (editable.length() == 2 || editable.length() == 5) {
-                    editable.append("/");
-                } else if (editable.length() >= 10) {
-                    editable.delete(editable.length(), editable.length());
-                }
             }
         });
     }
