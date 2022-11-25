@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onClickReturn(View view) {
-//        finish();
+        finish();
     }
 
     public void onClickSwitchRegister(View view) {
