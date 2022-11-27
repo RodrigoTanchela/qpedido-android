@@ -14,7 +14,7 @@
             android:theme="@style/Theme.Qpedidoandroid"
             tools:targetApi="31">
         <activity
-                android:name=".QRCodeActivity"
+                android:name=".activity.QRCodeActivity"
                 android:exported="false"/>
         <activity
                 android:name=".activity.LoginActivity"
