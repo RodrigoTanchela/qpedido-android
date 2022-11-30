@@ -25,6 +25,7 @@
     <string name="user_login">Login</string>
     <string name="find_locations">Buscar restaurantes</string>
     <string name="load_table_code">Posicione sobre o código na mesa</string>
+    <string name="map">Mapa</string>
 
 
     <string name="login_fragment_title">Informações de acesso</string>

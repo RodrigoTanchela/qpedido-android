@@ -1,18 +1,30 @@
 package com.qpedido.android.activity;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.*;
+import com.google.maps.android.ui.IconGenerator;
 import com.qpedido.android.R;
+import com.qpedido.android.constant.Constant;
+import com.qpedido.android.model.Partner;
+import org.jetbrains.annotations.NotNull;
 
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback  {
-    private GoogleMap mMap;
+    private GoogleMap googleMap;
 
+    @SuppressLint("MissingPermission")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +33,15 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED)
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, 8);
+
+        LocationServices.getFusedLocationProviderClient(getApplicationContext()).getLastLocation().addOnSuccessListener(this, location -> {
+            if (location != null && googleMap != null) {
+                googleMap.setMyLocationEnabled(true);
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 12f));
+            }
+        });
     }
 
     /**
@@ -33,15 +54,23 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions()
-                .position(sydney)
-                .title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    @SuppressLint("MissingPermission")
+    @Override
+    public void onMapReady(@NotNull GoogleMap googleMap) {
+        this.googleMap = googleMap;
+        for (Partner partner: Constant.PARTNERS) {
+            Marker marker = googleMap.addMarker(new MarkerOptions().position(new LatLng(partner.getLatitude(), partner.getLongitude())));
+            if (marker != null) {
+                IconGenerator iconFactory = new IconGenerator(this);
+                marker.setIcon(BitmapDescriptorFactory.fromBitmap(iconFactory.makeIcon( partner.getIcon() + " " + partner.getName())));
+            }
+        }
+    }
+
+    public void onClickReturn(View view) {
+        Intent intent = new Intent(this, QRCodeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }
