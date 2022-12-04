@@ -56,7 +56,8 @@
                     android:layout_height="wrap_content" android:id="@+id/buttonLogin"
                     android:layout_marginTop="20dp"
                     android:backgroundTint="@color/blue_1" android:fontFamily="@font/roboto_bold"
-                    android:minWidth="328dp" android:maxWidth="400dp" android:onClick="onClickLogin"/>
+                    android:minWidth="328dp" android:maxWidth="400dp" android:onClick="onClickLogin"
+                    android:height="60dp"/>
             <ImageView
                     android:src="@drawable/has_account"
                     android:layout_width="match_parent"
@@ -67,7 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/buttonRegister"
                     android:backgroundTint="@color/green_1" android:fontFamily="@font/roboto_bold"
-                    android:includeFontPadding="false" android:onClick="onClickSwitchRegister"/>
+                    android:includeFontPadding="false" android:onClick="onClickSwitchRegister" android:height="60dp"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
