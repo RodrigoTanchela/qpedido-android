@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.*;
 import com.google.maps.android.ui.IconGenerator;
 import com.qpedido.android.R;
 import com.qpedido.android.constant.Constant;
-import com.qpedido.android.model.Partner;
+import com.qpedido.android.model.Restaurant;
 import org.jetbrains.annotations.NotNull;
 
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback  {
@@ -59,11 +59,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(@NotNull GoogleMap googleMap) {
         this.googleMap = googleMap;
-        for (Partner partner: Constant.PARTNERS) {
-            Marker marker = googleMap.addMarker(new MarkerOptions().position(new LatLng(partner.getLatitude(), partner.getLongitude())));
+        for (Restaurant restaurant: Constant.PARTNERS) {
+            Marker marker = googleMap.addMarker(new MarkerOptions().position(new LatLng(restaurant.getLatitude(), restaurant.getLongitude())));
             if (marker != null) {
                 IconGenerator iconFactory = new IconGenerator(this);
-                marker.setIcon(BitmapDescriptorFactory.fromBitmap(iconFactory.makeIcon( partner.getIcon() + " " + partner.getName())));
+                marker.setIcon(BitmapDescriptorFactory.fromBitmap(iconFactory.makeIcon( restaurant.getIcon() + " " + restaurant.getName())));
             }
         }
     }

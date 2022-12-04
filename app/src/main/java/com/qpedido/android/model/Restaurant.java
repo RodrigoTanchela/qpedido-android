@@ -1,12 +1,12 @@
 package com.qpedido.android.model;
 
-public class Partner {
+public class Restaurant {
     private String name;
     private String icon;
     private double latitude;
     private double longitude;
 
-    public Partner(String name, String icon, double latitude, double longitude) {
+    public Restaurant(String name, String icon, double latitude, double longitude) {
         this.name = name;
         this.icon = icon;
         this.latitude = latitude;

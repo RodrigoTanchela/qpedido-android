@@ -132,20 +132,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/buttonRegister"
                         android:backgroundTint="@color/green_1" android:fontFamily="@font/roboto_bold"
-                        android:includeFontPadding="false" android:onClick="onClickRegister"/>
+                        android:includeFontPadding="false" android:onClick="onClickRegister" android:height="60dp"/>
                 <ImageView
                         android:src="@drawable/has_account"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/imageView3"
-                        android:minHeight="30dp" android:layout_marginTop="30dp" android:layout_marginBottom="30dp"/>
+                        android:minHeight="30dp" android:layout_marginTop="20dp" android:layout_marginBottom="30dp"/>
                 <Button
                         android:text="@string/login"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" android:id="@+id/buttonLogin"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
                         android:backgroundTint="@color/blue_1" android:fontFamily="@font/roboto_bold"
                         android:minWidth="328dp" android:maxWidth="400dp" android:onClick="onClickSwitchLogin"
-                        android:layout_marginBottom="40dp"/>
+                        android:layout_marginBottom="40dp" android:height="60dp"/>
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
